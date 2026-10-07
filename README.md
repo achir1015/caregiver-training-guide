@@ -1,4 +1,5 @@
-# 照顧服務員訓練指引｜章節閱讀與查詢程式
+# 照顧服務員訓練指引｜章節閱讀與查詢程式 https://achir1015.github.io/caregiver-training-guide/
+<img width="1770" height="914" alt="image" src="https://github.com/user-attachments/assets/43d335da-5c62-4788-8a8a-703d92737922" />
 
 把《照顧服務員訓練指引》（掃描 PDF）轉成可依**章節大綱**閱讀、用**關鍵字**查詢全文的網頁，適合照顧服務員在實務現場快速查找照顧技術、常見情境的處理原則與工作方法。
 
