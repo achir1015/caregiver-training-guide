@@ -1,0 +1,7 @@
+# 書籍內容（有版權）不放進公開 repo
+*.pdf
+ocr*.json
+data.js
+download/
+__pycache__/
+.claude/

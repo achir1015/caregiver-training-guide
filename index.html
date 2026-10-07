@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>照顧服務員訓練指引</title>
+<meta name="description" content="依章節大綱閱讀與關鍵字查詢《照顧服務員訓練指引》：照顧技術、常見情境與工作方法">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2d6a8a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="照服員指引">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="application-name" content="照服員指引">
+<style>
+:root{
+  --bg:#f6f4ef; --panel:#ffffff; --ink:#1f2a2e; --muted:#5d6b70; --line:#e2ddd3;
+  --accent:#2d6a8a; --accent-soft:#e2eef4; --mark:#ffe08a; --mark-ink:#1f2a2e; --hit:#fff6d6;
+  --side-w:320px; --fs:17px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15191b; --panel:#1d2326; --ink:#e4e8e6; --muted:#9aa7a9; --line:#2f383b;
+    --accent:#86c3e0; --accent-soft:#1f3340; --mark:#8a6d12; --mark-ink:#fff; --hit:#2c2a1d;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15191b; --panel:#1d2326; --ink:#e4e8e6; --muted:#9aa7a9; --line:#2f383b;
+  --accent:#86c3e0; --accent-soft:#1f3340; --mark:#8a6d12; --mark-ink:#fff; --hit:#2c2a1d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;line-height:1.85}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--accent)}
+mark{background:var(--mark);color:var(--mark-ink);border-radius:3px;padding:0 1px}
+
+/* top bar */
+header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;padding:10px 16px}
+.brand{font-weight:700;white-space:nowrap;font-size:17px;cursor:pointer}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px;line-height:1.2}
+.search{flex:1;display:flex;gap:8px;min-width:0}
+.search input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.search select{padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);max-width:150px}
+.icon-btn{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:8px 10px;cursor:pointer;white-space:nowrap}
+.icon-btn:hover{border-color:var(--accent)}
+#menuBtn{display:none}
+
+.layout{display:flex;min-height:calc(100vh - 58px)}
+aside{width:var(--side-w);flex:none;border-right:1px solid var(--line);background:var(--panel);position:sticky;top:58px;height:calc(100vh - 58px);overflow:auto;padding:12px 0 40px}
+main{flex:1;min-width:0;padding:24px 16px 80px}
+.wrap{max-width:820px;margin:0 auto}
+
+/* outline */
+.chap{margin:2px 0}
+.chap>button{width:100%;text-align:left;border:0;background:none;padding:8px 16px;font-weight:700;cursor:pointer;display:flex;gap:6px;align-items:baseline}
+.chap>button::before{content:"▸";color:var(--muted);transition:transform .15s}
+.chap.open>button::before{transform:rotate(90deg)}
+.chap .secs{display:none}
+.chap.open .secs{display:block}
+.sec-link{display:block;padding:5px 16px 5px 30px;text-decoration:none;color:var(--ink);font-size:15px;border-left:3px solid transparent}
+.sec-link:hover{background:var(--accent-soft)}
+.sec-link.active{border-left-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.sub-link{display:block;padding:3px 16px 3px 44px;font-size:13.5px;color:var(--muted);text-decoration:none}
+.sub-link:hover{color:var(--accent)}
+.sub-link.case{color:var(--ink)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:3px 12px;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* reading */
+.crumb{color:var(--muted);font-size:14px}
+h1{font-size:26px;line-height:1.4;margin:4px 0 6px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:14px;margin-bottom:18px}
+.doc{font-size:var(--fs)}
+.doc h3{font-size:1.2em;margin:1.8em 0 .6em;padding-bottom:4px;border-bottom:2px solid var(--accent-soft);color:var(--accent);scroll-margin-top:72px}
+.doc h4{font-size:1.08em;margin:1.6em 0 .5em;padding:6px 12px;background:var(--accent-soft);border-radius:6px;scroll-margin-top:72px}
+.doc p{margin:.5em 0;text-align:justify;scroll-margin-top:90px}
+.doc p.li{padding-left:1.6em;text-indent:-1.6em}
+.doc p.flash{background:var(--hit);border-radius:4px;box-shadow:0 0 0 6px var(--hit)}
+.pg{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px;text-decoration:none;white-space:nowrap;vertical-align:1px}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;border-top:1px solid var(--line);padding-top:16px}
+.pager a{display:block;max-width:48%;text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font-size:15px}
+.pager a small{display:block;color:var(--muted)}
+.pager a:hover{border-color:var(--accent)}
+
+/* home */
+.hero{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+.hero h1{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{font-size:13.5px;color:var(--muted);line-height:1.6;display:block}
+.section-title{margin:28px 0 4px;font-size:18px}
+
+/* results */
+.rhead{margin-bottom:12px;color:var(--muted)}
+.rgroup{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:12px 0;overflow:hidden}
+.rgroup>div.gt{padding:10px 14px;border-bottom:1px solid var(--line);font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.rgroup>div.gt small{color:var(--muted);font-weight:400}
+.ritem{display:block;padding:10px 14px;text-decoration:none;color:var(--ink);border-top:1px dashed var(--line);font-size:15px;line-height:1.7}
+.ritem:first-of-type{border-top:0}
+.ritem:hover{background:var(--accent-soft)}
+.ritem .where{display:block;font-size:12.5px;color:var(--muted)}
+.more{padding:8px 14px}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+
+.backdrop{display:none}
+footer{color:var(--muted);font-size:13px;margin-top:40px}
+
+@media (max-width: 900px){
+  #menuBtn{display:inline-block}
+  .brand small{display:none}
+  aside{position:fixed;left:0;top:0;height:100vh;z-index:40;transform:translateX(-100%);transition:transform .2s;width:min(86vw,var(--side-w));box-shadow:0 0 30px rgba(0,0,0,.25)}
+  body.nav-open aside{transform:none}
+  body.nav-open .backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30}
+  .search select{display:none}
+  h1{font-size:22px}
+}
+@media (max-width: 520px){
+  header{flex-wrap:wrap}
+  .search{order:3;flex-basis:100%}
+  .brand{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:16px}
+  header .icon-btn{padding:7px 9px}
+}
+/* 手機與瀏海螢幕 */
+header{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-top:max(10px,env(safe-area-inset-top))}
+main{padding-bottom:max(80px,env(safe-area-inset-bottom))}
+body{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+.search input{font-size:16px}
+#installBtn[hidden]{display:none}
+@media (max-width: 900px){
+  aside{padding-top:max(12px,env(safe-area-inset-top))}
+  .sec-link{padding-top:9px;padding-bottom:9px}
+  .sub-link{padding-top:7px;padding-bottom:7px}
+  .chip{padding:6px 14px}
+  .pager a{max-width:none;flex:1}
+}
+
+/* 匯入資料 */
+.import{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;max-width:640px;margin:20px auto}
+.import h1{margin-top:0}
+.import ol{padding-left:1.4em}
+.import .drop{display:block;border:2px dashed var(--line);border-radius:10px;padding:22px;text-align:center;cursor:pointer;margin:14px 0;background:var(--bg)}
+.import .drop:hover,.import .drop.over{border-color:var(--accent)}
+.import .err{color:#c0392b}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:12px}
+.skill{display:flex;gap:8px;align-items:baseline;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px;text-decoration:none;color:var(--ink);font-size:15px;line-height:1.5}
+.skill:hover{border-color:var(--accent)}
+.skill b{color:var(--accent);font-size:13px;flex:none;min-width:3.2em}
+.skill small{margin-left:auto;color:var(--muted);flex:none}
+.jump{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap;font-size:15px}
+.jump input{width:6em;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.doc .note{display:block;text-indent:0;margin:4px 0 2px;padding:4px 10px;border-left:3px solid var(--accent-soft);color:var(--muted);font-size:.9em}
+.ocr-note{font-size:13px;color:var(--muted);background:var(--bg);border-radius:8px;padding:8px 12px;margin:0 0 16px}
+@media print{header,aside,.pager,.backdrop{display:none}main{padding:0}}
+</style>
+</head>
+<body>
+<header>
+  <button class="icon-btn" id="menuBtn" aria-label="開啟章節目錄">☰</button>
+  <div class="brand" id="home">照顧服務員訓練指引<small>章節閱讀與關鍵字查詢</small></div>
+  <form class="search" id="searchForm" role="search">
+    <input id="q" type="search" placeholder="輸入關鍵字，例如：翻身 壓傷（空白分隔＝同時包含）" autocomplete="off">
+    <select id="scope" aria-label="查詢範圍"><option value="">全部章節</option></select>
+  </form>
+  <button class="icon-btn" id="installBtn" title="安裝到裝置" hidden>安裝</button>
+  <button class="icon-btn" id="fontBtn" title="調整字級">A±</button>
+  <button class="icon-btn" id="themeBtn" title="切換深淺色">◐</button>
+</header>
+<div class="layout">
+  <aside id="nav" aria-label="章節大綱"></aside>
+  <div class="backdrop" id="backdrop"></div>
+  <main><div class="wrap" id="view"></div></main>
+</div>
+
+<script src="data.js"></script>
+<script>
+(() => {
+  const STANDALONE = false;
+  const DATA_FILE = '照顧服務員訓練指引-資料.json';
+  const $ = id => document.getElementById(id);
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const store = {
+    get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set(k, v){ try { localStorage.setItem(k, v); } catch(e){} }
+  };
+
+  /* ---------- 資料：data.js（本機／單檔版），或匯入後存在本裝置的 IndexedDB ---------- */
+  const idb = {
+    open(){ return new Promise((ok, no) => {
+      const r = indexedDB.open('caregiver-guide', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('kv');
+      r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error);
+    }); },
+    async get(k){ const db = await this.open(); return new Promise((ok, no) => {
+      const r = db.transaction('kv').objectStore('kv').get(k); r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error); }); },
+    async set(k, v){ const db = await this.open(); return new Promise((ok, no) => {
+      const t = db.transaction('kv', 'readwrite'); t.objectStore('kv').put(v, k); t.oncomplete = ok; t.onerror = () => no(t.error); }); },
+    async del(k){ const db = await this.open(); return new Promise(ok => {
+      const t = db.transaction('kv', 'readwrite'); t.objectStore('kv').delete(k); t.oncomplete = ok; }); }
+  };
+  const fromScript = !!window.MANUAL;
+  // 只有在本機資料夾直接開啟（與 PDF 同一資料夾）時，頁碼才連到 PDF 原頁
+  const PDF_LINK = fromScript && !STANDALONE && location.protocol === 'file:';
+
+  function parseData(text){
+    text = text.trim().replace(/^﻿/, '');
+    if (text.startsWith('window.MANUAL')) text = text.replace(/^window\.MANUAL\s*=\s*/, '').replace(/;\s*$/, '');
+    const d = JSON.parse(text);
+    if (!d || !Array.isArray(d.sections) || !d.sections.length) throw new Error('格式不符');
+    return d;
+  }
+
+  function renderImport(msg){
+    $('nav').innerHTML = '';
+    document.body.classList.remove('nav-open');
+    $('view').innerHTML = `
+      <div class="import">
+        <h1>照顧服務員訓練指引</h1>
+        <p>本網站只提供閱讀與查詢程式，書籍內容不放在網路上。第一次使用請匯入資料檔（<b>${esc(DATA_FILE)}</b>），之後資料保存在這台裝置，可離線使用。</p>
+        <label class="drop" id="drop"><input type="file" id="file" accept=".json,.js,application/json" hidden>
+          📂 點這裡選擇資料檔，或把檔案拖曳到這裡</label>
+        <p class="err" id="err">${msg ? esc(msg) : ''}</p>
+        <ol>
+          <li>資料檔由書籍 PDF 在電腦上執行 <code>python tools/ocr.py</code> 與 <code>python tools/build.py</code> 產生，位於 <code>download/</code> 資料夾。</li>
+          <li>手機：先把資料檔存到手機（雲端硬碟、LINE 傳給自己、AirDrop 等），再於此頁選擇檔案。</li>
+          <li>iPhone 若已「加入主畫面」，請從主畫面圖示開啟後再匯入一次（主畫面 App 與 Safari 的資料分開保存）。</li>
+        </ol>
+      </div>`;
+    const input = $('file'), drop = $('drop');
+    const load = async file => {
+      try {
+        const d = parseData(await file.text());
+        try { await idb.set('data', d); } catch(e) {}
+        location.hash = '';
+        start(d);
+      } catch(e) { $('err').textContent = '無法讀取這個檔案：' + e.message; }
+    };
+    input.addEventListener('change', () => input.files[0] && load(input.files[0]));
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+    drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && load(e.dataTransfer.files[0]); });
+  }
+
+  let routeFn = () => {}, listening = false;
+  function go(h){ if (location.hash.slice(1) === h) routeFn(); else location.hash = h; }
+
+  function start(M){
+    const S = M.sections;
+    const byId = Object.fromEntries(S.map((s, i) => [s.id, Object.assign(s, {idx: i})]));
+    const chapters = [];
+    S.forEach(s => {
+      let c = chapters.find(c => c.name === s.chap);
+      if (!c) chapters.push(c = {name: s.chap, secs: []});
+      c.secs.push(s);
+    });
+    const secName = s => s.title === '本章導讀' ? s.chap.replace(/^第\d+章\s*/, '') + '・導讀' : s.title;
+    // 搜尋時忽略空白，並把半形／全形符號視為相同
+    const fold = t => t.replace(/[\s　]/g, '').replace(/（/g,'(').replace(/）/g,')').replace(/，/g,',').replace(/：/g,':').toLowerCase();
+    S.forEach(s => s.blocks.forEach(b => { b.f = fold(b.x + (b.n || '')); }));
+
+    const CHIPS = ['跌倒','壓傷','翻身','移位','輪椅','鼻胃管','管灌','尿管','沐浴','口腔清潔','失智','溝通','憂鬱','血壓','血糖','感染','洗手','哽塞','心肺復甦術','約束','用藥','臨終','性騷擾','家屬','倫理','職業傷害'];
+
+    const pgLabel = pg => PDF_LINK && M.pdf && M.pdf[pg]
+      ? `<a class="pg" href="${encodeURI(M.source)}#page=${M.pdf[pg]}" target="_blank" rel="noopener" title="開啟 PDF 原頁（書第 ${pg} 頁）">p.${pg}</a>`
+      : `<span class="pg" title="原書第 ${pg} 頁">p.${pg}</span>`;
+
+    /* ---------- 大綱 ---------- */
+    function buildNav(){
+      const nav = $('nav');
+      nav.innerHTML = chapters.map((c, ci) => `
+        <div class="chap" data-ci="${ci}">
+          <button type="button">${esc(c.name)}</button>
+          <div class="secs">${c.secs.map(s => `
+            <a class="sec-link" href="#${s.id}" data-id="${s.id}">${esc(s.title)}</a>
+            ${s.blocks.map((b, bi) => b.t === 'h3'
+                ? `<a class="sub-link" href="#${s.id}/${bi}">${esc(b.x)}</a>` : '').join('')}
+          `).join('')}</div>
+        </div>`).join('');
+      nav.querySelectorAll('.chap>button').forEach(btn =>
+        btn.addEventListener('click', () => btn.parentElement.classList.toggle('open')));
+      nav.addEventListener('click', e => { if (e.target.closest('a')) document.body.classList.remove('nav-open'); });
+      $('scope').innerHTML = '<option value="">全部章節</option>' + chapters.map((c, ci) => `<option value="${ci}">${esc(c.name)}</option>`).join('');
+    }
+    function markNav(id){
+      document.querySelectorAll('.sec-link').forEach(a => a.classList.toggle('active', a.dataset.id === id));
+      if (!id) return;
+      const a = document.querySelector(`.sec-link[data-id="${id}"]`);
+      a.closest('.chap').classList.add('open');
+      const r = a.getBoundingClientRect(), n = $('nav').getBoundingClientRect();
+      if (r.top < n.top || r.bottom > n.bottom) a.scrollIntoView({block: 'center'});
+    }
+
+    /* ---------- 高亮 ---------- */
+    function terms(q){ return q.split(/[\s　]+/).map(fold).filter(Boolean); }
+    // 在原文中標出關鍵字（容許原文字元間夾空白、全半形括號）
+    function highlight(text, ts){
+      let h = esc(text);
+      if (!ts.length) return h;
+      const pats = ts.map(t => [...t].map(ch =>
+        ch === '(' ? '[(（]' : ch === ')' ? '[)）]' : ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s*'));
+      return h.replace(new RegExp('(' + pats.join('|') + ')', 'gi'), '<mark>$1</mark>');
+    }
+
+    /* ---------- 書頁 → 段落 ---------- */
+    function locatePage(pg){
+      for (const s of S) {
+        const bi = s.blocks.findIndex(b => b.pg >= pg);
+        if (bi >= 0) return {id: s.id, bi};
+      }
+      return null;
+    }
+
+    /* ---------- 首頁 ---------- */
+    function renderHome(){
+      markNav(null);
+      const skills = (M.skills || []).map(k =>
+        `<a class="skill" href="#k=${encodeURIComponent(k.no)}"><b>${esc(k.no)}</b><span>${esc(k.name)}</span><small>p.${k.pg}</small></a>`).join('');
+      $('view').innerHTML = `
+        <div class="hero">
+          <h1>照顧服務員訓練指引</h1>
+          <div>依章節大綱閱讀，或在上方輸入關鍵字查詢全文。內容涵蓋照顧服務員的角色與倫理、身心障礙與失智照顧、溝通與壓力調適、生命徵象、身體照顧技術、意外與急救、用藥安全與臨終照顧。</div>
+          <div class="chips">${CHIPS.map(c => `<button class="chip" data-q="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+          <form class="jump" id="jumpForm">跳到原書第 <input id="jumpPg" type="number" min="1" max="${M.pages}" inputmode="numeric" aria-label="頁碼"> 頁 <button class="icon-btn">前往</button></form>
+        </div>
+        ${skills ? `<h2 class="section-title">照顧技術操作</h2><div class="skill-grid">${skills}</div>` : ''}
+        <h2 class="section-title">章節</h2>
+        <div class="grid">${chapters.map(c => `
+          <a class="card" href="#${c.secs[0].id}"><b>${esc(c.name)}</b>
+          <span>${c.secs.filter(s => s.title !== '本章導讀').map(s => esc(s.title.replace(/^(第.節|附錄\S+)\s*/, ''))).join('、')}</span></a>`).join('')}</div>
+        ${STANDALONE ? '' : `<p style="margin-top:28px"><button class="icon-btn" id="reimport">更新／重新匯入資料</button>
+          ${fromScript ? '' : ' <button class="icon-btn" id="clearData">從本裝置移除資料</button>'}</p>`}
+        <footer>內容整理自《照顧服務員訓練指引》（共 ${M.pages} 頁），由書頁影像以文字辨識（OCR）轉出，個別字詞、數字或表格可能有誤，請以原書為準。書籍內容版權屬原出版社及作者，僅供個人學習查詢使用。</footer>`;
+      bindChips();
+      $('jumpForm').addEventListener('submit', e => { e.preventDefault(); const v = +$('jumpPg').value; if (v) go('p=' + v); });
+      const ri = $('reimport'); if (ri) ri.addEventListener('click', () => renderImport());
+      const cd = $('clearData'); if (cd) cd.addEventListener('click', async () => {
+        if (!confirm('確定要從這台裝置移除書籍資料？之後需要重新匯入。')) return;
+        await idb.del('data'); location.hash = ''; location.reload();
+      });
+    }
+    function bindChips(){
+      document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => go('q=' + encodeURIComponent(c.dataset.q))));
+    }
+
+    /* ---------- 閱讀 ---------- */
+    function renderSection(id, focus, q){
+      const s = byId[id];
+      if (!s) return renderHome();
+      markNav(id);
+      const ts = q ? terms(q) : [];
+      let lastPg = 0;
+      const body = s.blocks.map((b, bi) => {
+        const pg = b.pg !== lastPg ? pgLabel(b.pg) : '';
+        lastPg = b.pg;
+        const tx = highlight(b.x, ts);
+        if (b.t === 'h3') return `<h3 id="b${bi}">${tx}${pg}</h3>`;
+        if (b.t === 'h4') return `<h4 id="b${bi}">${tx}${pg}</h4>`;
+        const note = b.n ? `<span class="note">說明：${highlight(b.n, ts)}</span>` : '';
+        return `<p id="b${bi}" class="${b.t === 'li' ? 'li' : ''}">${tx}${pg}${note}</p>`;
+      }).join('');
+      const prev = S[s.idx - 1], next = S[s.idx + 1];
+      $('view').innerHTML = `
+        <div class="crumb">${esc(s.chap)}</div>
+        <h1>${esc(secName(s))}</h1>
+        <div class="meta">原書第 ${s.start}${s.end > s.start ? '–' + s.end : ''} 頁
+          ${PDF_LINK && M.pdf[s.start] ? `<a href="${encodeURI(M.source)}#page=${M.pdf[s.start]}" target="_blank" rel="noopener">開啟 PDF 原頁</a>` : ''}
+          ${q ? `<span>· 標示關鍵字「${esc(q)}」 <a href="#${id}">清除</a> · <a href="#q=${encodeURIComponent(q)}">回查詢結果</a></span>` : ''}
+        </div>
+        ${s.blocks.length ? '' : '<p class="ocr-note">本節以圖表為主，請參閱原書。</p>'}
+        <article class="doc">${body}</article>
+        <nav class="pager">
+          ${prev ? `<a href="#${prev.id}"><small>上一節</small>${esc(secName(prev))}</a>` : '<span></span>'}
+          ${next ? `<a href="#${next.id}" style="text-align:right"><small>下一節</small>${esc(secName(next))}</a>` : '<span></span>'}
+        </nav>`;
+      const el = focus != null && document.getElementById('b' + focus);
+      if (el) {
+        el.scrollIntoView({block: el.tagName === 'P' ? 'center' : 'start'});
+        if (el.tagName === 'P') { el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2500); }
+      } else {
+        const m = ts.length && document.querySelector('.doc mark');
+        if (m) m.scrollIntoView({block: 'center'}); else window.scrollTo(0, 0);
+      }
+    }
+
+    /* ---------- 查詢 ---------- */
+    function renderSearch(q, scope){
+      markNav(null);
+      const ts = terms(q);
+      if (!ts.length) return renderHome();
+      const groups = [];
+      let total = 0;
+      S.forEach(s => {
+        if (scope !== '' && scope != null && chapters[scope].name !== s.chap) return;
+        let sub = '';
+        const hits = [];
+        s.blocks.forEach((b, bi) => {
+          if (b.t === 'h3') sub = b.x;
+          if (ts.every(t => b.f.includes(t))) hits.push({b, bi, sub});
+        });
+        if (hits.length) { groups.push({s, hits}); total += hits.length; }
+      });
+      const snip = x => {
+        const c = x.replace(/[\s　]+/g, ''), fc = fold(c);
+        let i = -1;
+        for (const t of ts) { i = fc.indexOf(t); if (i >= 0) break; }
+        const st = Math.max(0, i - 40);
+        return (st > 0 ? '…' : '') + c.slice(st, st + 140) + (st + 140 < c.length ? '…' : '');
+      };
+      const LIMIT = 6;
+      $('view').innerHTML = `
+        <div class="rhead">「${esc(q)}」共找到 <b>${total}</b> 段，分布於 <b>${groups.length}</b> 個章節</div>
+        ${groups.length ? groups.map((g, gi) => `
+          <div class="rgroup">
+            <div class="gt"><a href="#${g.s.id}?q=${encodeURIComponent(q)}">${esc(secName(g.s))}</a><small>${esc(g.s.chap)} · ${g.hits.length} 筆</small></div>
+            ${g.hits.map((h, hi) => `
+              <a class="ritem" href="#${g.s.id}/${h.bi}?q=${encodeURIComponent(q)}" ${hi >= LIMIT ? 'hidden data-more="' + gi + '"' : ''}>
+                <span class="where">${h.sub ? esc(h.sub) + ' · ' : ''}p.${h.b.pg}</span>${highlight(snip(h.b.x + (h.b.n ? '（說明：' + h.b.n + '）' : '')), ts)}</a>`).join('')}
+            ${g.hits.length > LIMIT ? `<div class="more"><button class="icon-btn" data-show="${gi}">顯示其餘 ${g.hits.length - LIMIT} 筆</button></div>` : ''}
+          </div>`).join('')
+        : `<div class="empty">查無結果。可試著縮短關鍵字，或改用同義詞（例如「服務對象」「個案」「長輩」）。<div class="chips" style="justify-content:center">${CHIPS.slice(0, 10).map(c => `<button class="chip" data-q="${esc(c)}">${esc(c)}</button>`).join('')}</div></div>`}`;
+      document.querySelectorAll('[data-show]').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll(`[data-more="${b.dataset.show}"]`).forEach(a => a.hidden = false);
+        b.parentElement.remove();
+      }));
+      bindChips();
+      window.scrollTo(0, 0);
+    }
+
+    /* ---------- 路由：#s4 / #s4/12?q=xx / #q=xx&c=2 / #p=213（書頁）/ #k=10-1（技術） ---------- */
+    function route(){
+      const h = decodeURIComponent(location.hash.slice(1));
+      if (h.startsWith('q=')) {
+        const p = new URLSearchParams(location.hash.slice(1));
+        const q = p.get('q') || '', c = p.get('c') || '';
+        $('q').value = q; $('scope').value = c;
+        return renderSearch(q, c);
+      }
+      const km = h.match(/^k=(\d+-\d+)$/);
+      if (km) {
+        const k = (M.skills || []).find(k => k.no === km[1]);
+        for (const s of S) {
+          const bi = s.blocks.findIndex(b => b.t === 'h3' && b.x.startsWith('技術' + km[1] + ' '));
+          if (bi >= 0) return renderSection(s.id, bi, '');
+        }
+        if (k) { const loc = locatePage(k.pg); if (loc) return renderSection(loc.id, loc.bi, ''); }
+      }
+      const pm = h.match(/^p=(\d+)$/);
+      if (pm) {
+        const loc = locatePage(+pm[1]);
+        if (loc) return renderSection(loc.id, loc.bi, '');
+      }
+      const m = h.match(/^(s\d+)(?:\/(\d+))?(?:\?q=(.*))?$/);
+      if (m) return renderSection(m[1], m[2] != null ? +m[2] : null, m[3] || '');
+      $('q').value = '';
+      renderHome();
+    }
+    routeFn = route;
+    buildNav();
+    if (!listening) { listening = true; window.addEventListener('hashchange', () => routeFn()); }
+    route();
+  }
+
+  $('searchForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const q = $('q').value.trim(), c = $('scope').value;
+    if (q) go('q=' + encodeURIComponent(q) + (c ? '&c=' + c : '')); else go('');
+  });
+  let timer;
+  $('q').addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { if ($('q').value.trim().length >= 2) $('searchForm').requestSubmit(); }, 450);
+  });
+  $('scope').addEventListener('change', () => { if ($('q').value.trim()) $('searchForm').requestSubmit(); });
+  $('home').addEventListener('click', () => go(''));
+  $('menuBtn').addEventListener('click', () => document.body.classList.add('nav-open'));
+  $('backdrop').addEventListener('click', () => document.body.classList.remove('nav-open'));
+
+  const sizes = [15, 17, 19, 21];
+  let fi = Math.max(0, sizes.indexOf(+store.get('fs') || 17));
+  const applyFs = () => document.documentElement.style.setProperty('--fs', sizes[fi] + 'px');
+  applyFs();
+  $('fontBtn').addEventListener('click', () => { fi = (fi + 1) % sizes.length; applyFs(); store.set('fs', sizes[fi]); });
+  const th = store.get('theme');
+  if (th) document.documentElement.dataset.theme = th;
+  $('themeBtn').addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme
+      ? document.documentElement.dataset.theme === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+    store.set('theme', document.documentElement.dataset.theme);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== $('q')) { e.preventDefault(); $('q').focus(); }
+  });
+
+  // 安裝為 App（Android／桌面 Chrome、Edge）；iOS 請用 Safari「分享 → 加入主畫面」
+  let installEvt = null;
+  window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; $('installBtn').hidden = false; });
+  $('installBtn').addEventListener('click', async () => {
+    if (!installEvt) return;
+    installEvt.prompt();
+    await installEvt.userChoice;
+    installEvt = null; $('installBtn').hidden = true;
+  });
+  window.addEventListener('appinstalled', () => { $('installBtn').hidden = true; });
+  if (!STANDALONE && 'serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+
+  if (window.MANUAL) start(window.MANUAL);
+  else idb.get('data').then(d => d ? start(d) : renderImport()).catch(() => renderImport());
+})();
+</script>
+</body>
+</html>
