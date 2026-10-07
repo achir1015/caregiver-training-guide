@@ -35,7 +35,7 @@ python tools/build.py
 網站：https://achir1015.github.io/caregiver-training-guide/
 
 - **電腦**：直接用瀏覽器開啟 `index.html`。
-- **手機／平板**：開啟 GitHub Pages 網址，第一次使用時匯入 `照顧服務員訓練指引-資料.json`（可先用雲端硬碟、LINE 傳給自己），資料只存在該裝置的瀏覽器（IndexedDB），不會上傳。
+- **手機／平板**：開啟 GitHub Pages 網址，第一次使用時依畫面「步驟 1」到 Google 雲端硬碟下載 `照顧服務員訓練指引-資料.json`，再「步驟 2」匯入（雲端硬碟網址設定在 `index.html` 的 `DATA_URL`），資料只存在該裝置的瀏覽器（IndexedDB），不會上傳。
 
 ## 檔案
 

@@ -150,6 +150,7 @@ body{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
 .import h1{margin-top:0}
 .import ol{padding-left:1.4em}
 .import .drop{display:block;border:2px dashed var(--line);border-radius:10px;padding:22px;text-align:center;cursor:pointer;margin:14px 0;background:var(--bg)}
+.import .drop.dl{text-decoration:none;color:var(--ink);border-style:solid;border-color:var(--accent-soft);background:var(--accent-soft)}
 .import .drop:hover,.import .drop.over{border-color:var(--accent)}
 .import .err{color:#c0392b}
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:12px}
@@ -187,6 +188,7 @@ body{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
 (() => {
   const STANDALONE = false;
   const DATA_FILE = '照顧服務員訓練指引-資料.json';
+  const DATA_URL = 'https://drive.google.com/drive/folders/1FosgqRwV_twh38MQC5N7c2uk3YQdbani?usp=sharing';
   const $ = id => document.getElementById(id);
   const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const store = {
@@ -227,12 +229,13 @@ body{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
       <div class="import">
         <h1>照顧服務員訓練指引</h1>
         <p>本網站只提供閱讀與查詢程式，書籍內容不放在網路上。第一次使用請匯入資料檔（<b>${esc(DATA_FILE)}</b>），之後資料保存在這台裝置，可離線使用。</p>
+        <a class="drop dl" href="${DATA_URL}" target="_blank" rel="noopener">☁️ 步驟 1：到 Google 雲端硬碟下載 <b>${esc(DATA_FILE)}</b></a>
         <label class="drop" id="drop"><input type="file" id="file" accept=".json,.js,application/json" hidden>
-          📂 點這裡選擇資料檔，或把檔案拖曳到這裡</label>
+          📂 步驟 2：點這裡選擇下載的資料檔，或把檔案拖曳到這裡</label>
         <p class="err" id="err">${msg ? esc(msg) : ''}</p>
         <ol>
+          <li>手機下載：在 Google 雲端硬碟開啟資料檔 → 右上「⋮」→ 下載（iPhone 選「開啟於… → 儲存到檔案」），再回到此頁做步驟 2。</li>
           <li>資料檔由書籍 PDF 在電腦上執行 <code>python tools/ocr.py</code> 與 <code>python tools/build.py</code> 產生，位於 <code>download/</code> 資料夾。</li>
-          <li>手機：先把資料檔存到手機（雲端硬碟、LINE 傳給自己、AirDrop 等），再於此頁選擇檔案。</li>
           <li>iPhone 若已「加入主畫面」，請從主畫面圖示開啟後再匯入一次（主畫面 App 與 Safari 的資料分開保存）。</li>
         </ol>
       </div>`;

@@ -1,5 +1,5 @@
 // 離線使用：網頁採「網路優先、離線用快取」。書籍資料匯入後存在 IndexedDB，不經過這裡。
-const CACHE = 'caregiver-guide-v2';
+const CACHE = 'caregiver-guide-v3';
 const CORE = [
   './', 'index.html', 'manifest.webmanifest', 'favicon.ico',
   'icons/favicon-32.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'
